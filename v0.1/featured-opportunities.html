@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BACKED | Featured Opportunities</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- HEADER (reuse from homepage) -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo.svg" alt="BACKED Logo">
+        <span class="capital-one">by Capital One</span>
+      </a>
+    </div>
+    <nav>
+      <a href="featured-opportunities.html" class="nav-link active">Featured Opportunities</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <div class="toggle-container">
+        <button id="cursor-toggle" class="toggle-button" title="Toggle Cursor Effect"></button>
+        <button id="theme-toggle" class="toggle-button" title="Toggle Dark Mode"></button>
+      </div>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="opportunities-container">
+      <div class="opportunities-header">
+        <h1>Featured Opportunities</h1>
+      </div>
+      <div class="opportunities-grid">
+        <!-- Card 1 -->
+        <div class="opportunity-card" data-modal="modal1" tabindex="0">
+          <div class="opportunity-image">
+            <img src="images/bakery1.jpg" alt="Sweet Delights Bakery">
+            <span class="category-tag">Food & Beverage</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Sweet Delights Bakery</h3>
+            <div class="location">Portland, OR</div>
+            <div class="description">A beloved local bakery expanding to a second location. Invest in the taste of Portland!</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$300K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$250K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">87</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 83%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="opportunity-card" data-modal="modal2" tabindex="0">
+          <div class="opportunity-image">
+            <img src="images/ecotech1.jpg" alt="EcoTech Solutions">
+            <span class="category-tag">Technology</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>EcoTech Solutions</h3>
+            <div class="location">Austin, TX</div>
+            <div class="description">Smart home tech startup focused on sustainability and energy savings. Invest in the future.</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$200K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$175K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">102</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="opportunity-card" data-modal="modal3" tabindex="0">
+          <div class="opportunity-image">
+            <img src="images/brewery1.jpg" alt="Urban Brewery Co.">
+            <span class="category-tag">Food & Beverage</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Urban Brewery Co.</h3>
+            <div class="location">Chicago, IL</div>
+            <div class="description">Award-winning brewery expanding distribution to neighboring states. Cheers to growth!</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$400K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$320K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">150</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="opportunity-card" data-modal="modal4" tabindex="0">
+          <div class="opportunity-image">
+            <img src="images/bookstore1.jpg" alt="Next Chapter Books">
+            <span class="category-tag">Retail</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Next Chapter Books</h3>
+            <div class="location">New York, NY</div>
+            <div class="description">A community bookstore launching a new digital platform for local authors and readers.</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$150K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$90K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">60</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS -->
+    <!-- Modal 1: Sweet Delights Bakery -->
+    <div class="modal" id="modal1">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <img src="images/bakery1.jpg" alt="Sweet Delights Bakery photo 1" class="slide-img active">
+              <img src="images/bakery2.jpg" alt="Sweet Delights Bakery photo 2" class="slide-img">
+              <img src="images/bakery3.jpg" alt="Sweet Delights Bakery photo 3" class="slide-img">
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Sweet Delights Bakery</h2>
+            <div class="modal-location">Portland, OR</div>
+            <div class="modal-description">A beloved local bakery expanding to a second location. Invest in the taste of Portland!</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $300,000</div>
+              <div><strong>Raised:</strong> $250,000</div>
+              <div><strong>Investors:</strong> 87</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:83%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart1">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart1">Month</button>
+            </div>
+            <canvas id="chart1" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2: EcoTech Solutions -->
+    <div class="modal" id="modal2">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <img src="images/ecotech1.jpg" alt="EcoTech Solutions photo 1" class="slide-img active">
+              <img src="images/ecotech2.jpg" alt="EcoTech Solutions photo 2" class="slide-img">
+              <img src="images/ecotech3.jpg" alt="EcoTech Solutions photo 3" class="slide-img">
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>EcoTech Solutions</h2>
+            <div class="modal-location">Austin, TX</div>
+            <div class="modal-description">Smart home tech startup focused on sustainability and energy savings. Invest in the future.</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $200,000</div>
+              <div><strong>Raised:</strong> $175,000</div>
+              <div><strong>Investors:</strong> 102</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:88%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart2">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart2">Month</button>
+            </div>
+            <canvas id="chart2" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 3: Urban Brewery Co. -->
+    <div class="modal" id="modal3">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <img src="images/brewery1.jpg" alt="Urban Brewery Co. photo 1" class="slide-img active">
+              <img src="images/brewery2.jpg" alt="Urban Brewery Co. photo 2" class="slide-img">
+              <img src="images/brewery3.jpg" alt="Urban Brewery Co. photo 3" class="slide-img">
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Urban Brewery Co.</h2>
+            <div class="modal-location">Chicago, IL</div>
+            <div class="modal-description">Award-winning brewery expanding distribution to neighboring states. Cheers to growth!</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $400,000</div>
+              <div><strong>Raised:</strong> $320,000</div>
+              <div><strong>Investors:</strong> 150</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:80%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart3">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart3">Month</button>
+            </div>
+            <canvas id="chart3" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 4: Next Chapter Books -->
+    <div class="modal" id="modal4">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <img src="images/bookstore1.jpg" alt="Next Chapter Books photo 1" class="slide-img active">
+              <img src="images/bookstore2.jpg" alt="Next Chapter Books photo 2" class="slide-img">
+              <img src="images/bookstore3.jpg" alt="Next Chapter Books photo 3" class="slide-img">
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Next Chapter Books</h2>
+            <div class="modal-location">New York, NY</div>
+            <div class="modal-description">A community bookstore launching a new digital platform for local authors and readers.</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $150,000</div>
+              <div><strong>Raised:</strong> $90,000</div>
+              <div><strong>Investors:</strong> 60</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:60%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart4">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart4">Month</button>
+            </div>
+            <canvas id="chart4" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // MODAL LOGIC
+    document.querySelectorAll('.opportunity-card, .invest-button').forEach(card => {
+      card.addEventListener('click', function(e) {
+        e.preventDefault();
+        const modalId = this.dataset.modal || this.closest('.opportunity-card').dataset.modal;
+        document.getElementById(modalId).classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    document.querySelectorAll('.close-modal').forEach(btn => {
+      btn.addEventListener('click', function() {
+        this.closest('.modal').classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+    document.querySelectorAll('.modal').forEach(modal => {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.remove('open');
+          document.body.style.overflow = '';
+        }
+      });
+    });
+
+    // SLIDER LOGIC
+    document.querySelectorAll('.modal-slider').forEach(slider => {
+      const images = slider.querySelectorAll('.slide-img');
+      const left = slider.querySelector('.slide-arrow.left');
+      const right = slider.querySelector('.slide-arrow.right');
+      const current = slider.querySelector('.slide-count .current');
+      const total = slider.querySelector('.slide-count .total');
+      let idx = 0;
+      total.textContent = images.length;
+      function show(i) {
+        images.forEach((img, j) => img.classList.toggle('active', i === j));
+        current.textContent = i + 1;
+      }
+      left.addEventListener('click', e => {
+        e.stopPropagation();
+        idx = (idx - 1 + images.length) % images.length;
+        show(idx);
+      });
+      right.addEventListener('click', e => {
+        e.stopPropagation();
+        idx = (idx + 1) % images.length;
+        show(idx);
+      });
+      show(idx);
+    });
+
+    // CHART LOGIC
+    const chartConfigs = [
+      {
+        id: 'chart1',
+        year: { labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'], data: [80,85,90,100,120,140,160,180,210,230,240,250] },
+        month: { labels: Array.from({length: 30}, (_,i) => `Day ${i+1}`), data: Array.from({length: 30}, (_,i) => 220 + Math.sin(i/4)*10 + i/2) }
+      },
+      {
+        id: 'chart2',
+        year: { labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'], data: [50,60,70,85,100,110,130,145,155,160,170,175] },
+        month: { labels: Array.from({length: 30}, (_,i) => `Day ${i+1}`), data: Array.from({length: 30}, (_,i) => 150 + Math.sin(i/3)*8 + i/2) }
+      },
+      {
+        id: 'chart3',
+        year: { labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'], data: [100,120,130,140,160,180,200,220,250,280,300,320] },
+        month: { labels: Array.from({length: 30}, (_,i) => `Day ${i+1}`), data: Array.from({length: 30}, (_,i) => 280 + Math.sin(i/2)*15 + i/3) }
+      },
+      {
+        id: 'chart4',
+        year: { labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'], data: [10,20,30,35,40,50,55,60,70,80,85,90] },
+        month: { labels: Array.from({length: 30}, (_,i) => `Day ${i+1}`), data: Array.from({length: 30}, (_,i) => 80 + Math.sin(i/5)*7 + i/2) }
+      }
+    ];
+    let charts = {};
+    function renderChart(chartId, period) {
+      const config = chartConfigs.find(c => c.id === chartId);
+      const ctx = document.getElementById(chartId).getContext('2d');
+      if (charts[chartId]) charts[chartId].destroy();
+      charts[chartId] = new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels: config[period].labels,
+          datasets: [{
+            label: 'Funds Raised ($K)',
+            data: config[period].data,
+            borderColor: '#d32f2f',
+            backgroundColor: 'rgba(211,47,47,0.08)',
+            fill: true,
+            tension: 0.3,
+            pointRadius: 0,
+            borderWidth: 3
+          }]
+        },
+        options: {
+          plugins: { legend: { display: false } },
+          scales: {
+            x: { display: true, grid: { display: false } },
+            y: { display: true, grid: { color: '#e0e0e0' }, beginAtZero: true }
+          },
+          responsive: true,
+          maintainAspectRatio: false
+        }
+      });
+    }
+    // When modal opens, render chart
+    document.querySelectorAll('.modal').forEach((modal, idx) => {
+      modal.addEventListener('transitionend', function() {
+        if (modal.classList.contains('open')) {
+          renderChart(`chart${idx+1}`, 'year');
+        }
+      });
+      // Toggle between year/month
+      modal.querySelectorAll('.graph-toggle').forEach(btn => {
+        btn.addEventListener('click', function() {
+          modal.querySelectorAll('.graph-toggle').forEach(b => b.classList.remove('active'));
+          this.classList.add('active');
+          renderChart(this.dataset.chart, this.dataset.period);
+        });
+      });
+    });
+  </script>
+</body>
+</html>
