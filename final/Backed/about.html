@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BACKED | About Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <style>
+    /* About page specific styles */
+    .about-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 20px 80px;
+    }
+    
+    .about-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+    
+    .about-header h1 {
+      font-size: 2.5rem;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .about-header h1::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 3px;
+      background-color: var(--primary-red);
+    }
+    
+    .about-header p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: var(--text);
+    }
+    
+    .mission-section {
+      background-color: var(--light-gray);
+      padding: 80px 0;
+      margin: 20px 0 60px;
+    }
+    
+    .mission-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 60px;
+      padding: 0 20px;
+    }
+    
+    .mission-text {
+      flex: 1;
+    }
+    
+    .mission-text h2 {
+      font-size: 2rem;
+      color: var(--primary-blue);
+      margin-bottom: 20px;
+    }
+    
+    .mission-text p {
+      font-size: 1.1rem;
+      margin-bottom: 20px;
+      line-height: 1.7;
+      color: var(--text);
+    }
+    
+    .mission-image {
+      flex: 1;
+      position: relative;
+    }
+    
+    .mission-image img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 15px 30px var(--shadow);
+    }
+    
+    .mission-image::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: -20px;
+      left: -20px;
+      background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-blue) 100%);
+      z-index: -1;
+      border-radius: 10px;
+      opacity: 0.7;
+    }
+    
+    .stats-section {
+      padding: 40px 0;
+      margin-bottom: 60px;
+    }
+    
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .stat-card {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .stat-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px var(--shadow);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--primary-red);
+      margin-bottom: 10px;
+    }
+    
+    .stat-label {
+      font-size: 1.2rem;
+      color: var(--primary-blue);
+      font-weight: 600;
+    }
+    
+    .team-section {
+      margin-bottom: 80px;
+    }
+    
+    .section-header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    
+    .section-header h2 {
+      font-size: 2rem;
+      color: var(--primary-blue);
+      margin-bottom: 15px;
+      position: relative;
+      display: inline-block;
+    }
+    
+    .section-header h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 40px;
+      height: 3px;
+      background-color: var(--primary-red);
+    }
+    
+    .section-header p {
+      max-width: 600px;
+      margin: 0 auto;
+      color: var(--text);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+    
+    .team-member {
+      background-color: var(--card-bg);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px var(--shadow);
+      transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .team-member:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px var(--shadow);
+    }
+    
+    .member-image {
+      height: 280px;
+      overflow: hidden;
+    }
+    
+    .member-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    
+    .team-member:hover .member-image img {
+      transform: scale(1.1);
+    }
+    
+    .member-info {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .member-info h3 {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: var(--primary-blue);
+    }
+    
+    .member-info p {
+      color: var(--primary-red);
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+    
+    .social-icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+    }
+    
+    .social-icon {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--light-gray);
+      color: var(--text);
+      transition: all 0.3s ease;
+    }
+    
+    .social-icon:hover {
+      background-color: var(--primary-blue);
+      color: white;
+      transform: translateY(-3px);
+    }
+    
+    .cta-section {
+      background: linear-gradient(135deg, var(--primary-red) 0%, var(--primary-blue) 100%);
+      padding: 60px 0;
+      margin-bottom: -80px;
+      text-align: center;
+      color: white;
+    }
+    
+    .cta-content {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    .cta-content h2 {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+    }
+    
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 30px;
+      opacity: 0.9;
+    }
+    
+    .cta-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    @media (max-width: 992px) {
+      .mission-content {
+        flex-direction: column;
+      }
+      
+      .stats-grid,
+      .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .stats-grid,
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+      }
+      
+      .about-header h1,
+      .mission-text h2,
+      .section-header h2,
+      .cta-content h2 {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo2.png" alt="BACKED Logo">
+        <span class="capital-one">by Capital One</span>
+      </a>
+    </div>
+    <nav>
+      <a href="featured-opportunities.html" class="nav-link">Featured Opportunities</a>
+      <a href="about.html" class="nav-link active">About Us</a>
+      <div class="toggle-container">
+        <button id="cursor-toggle" class="toggle-button" title="Toggle Cursor Effect">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 13L20 6M17.5 6H20V8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 11L4 18M6.5 18H4V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button id="theme-toggle" class="toggle-button" title="Toggle Dark Mode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19.7778 4.22266L17.5558 6.25424" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.22217 4.22266L6.44418 6.25424" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6.44434 17.5557L4.22211 19.7779" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19.7778 19.7773L17.5558 17.5551" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="signup.html" class="btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="about-container">
+      <div class="about-header" data-aos="fade-up">
+        <h1>About BACKED</h1>
+        <p>Empowering local communities through innovative investing solutions, BACKED connects small businesses with local investors to create sustainable growth and shared prosperity.</p>
+      </div>
+    </div>
+
+    <section class="mission-section">
+      <div class="mission-content">
+        <div class="mission-text" data-aos="fade-right">
+          <h2>Our Mission</h2>
+          <p>BACKED was founded on a simple but powerful idea: what if people could directly invest in the small businesses they love in their communities?</p>
+          <p>Traditional financing options often leave small businesses behind, while everyday investors have limited access to meaningful local investment opportunities. BACKED bridges this gap, creating a platform where community members can invest in local businesses they believe in, while helping those businesses thrive.</p>
+          <p>By partnering with Capital One, we're able to provide a secure, transparent, and accessible platform that makes community investing simple for everyone.</p>
+        </div>
+        <div class="mission-image" data-aos="fade-left">
+          <img src="https://img.freepik.com/premium-vector/community-care-icons-team-help-illustration_911078-7846.jpg?semt=ais_hybrid&w=740" alt="Local community">
+        </div>
+      </div>
+    </section>
+
+    <div class="about-container">
+      <section class="stats-section">
+        <div class="stats-grid">
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="0">
+            <div class="stat-number">12.4</div>
+            <div class="stat-label">Million Dollars Invested</div>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="100">
+            <div class="stat-number">347</div>
+            <div class="stat-label">Businesses Funded</div>
+          </div>
+          <div class="stat-card" data-aos="fade-up" data-aos-delay="200">
+            <div class="stat-number">14.2%</div>
+            <div class="stat-label">Average Return</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="team-section">
+        <div class="section-header" data-aos="fade-up">
+          <h2>Our Team</h2>
+          <p>Meet the passionate individuals behind BACKED who are dedicated to transforming how communities invest and grow together.</p>
+        </div>
+        <div class="team-grid">
+          <!-- Matthew Thomas -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="0">
+            <div class="member-image">
+              <img src="matthew.png" alt="Matthew Thomas">
+            </div>
+            <div class="member-info">
+              <h3>Matthew Thomas</h3>
+              <p>Co-Founder</p>
+              <div class="member-bio">Computer Engineering @ PSU.<br>Fun Fact: I am a Black Belt in Karate!</div>
+              <div class="social-icons">
+                <a href="https://github.com/mattothomas" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/matthewothomas/" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Hien Nguyen -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-image">
+              <img src="hien.png" alt="Hien Nguyen">
+            </div>
+            <div class="member-info">
+              <h3>Hien Nguyen</h3>
+              <p>Co-Founder</p>
+              <div class="member-bio">Computer Science @ NYU.<br>Fun Fact: I am trilingual!</div>
+              <div class="social-icons">
+                <a href="https://github.com/hiennguyen711" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/hnguyen711/" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Evelyn Kwan -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-image">
+              <img src="Evelyn.png" alt="Evelyn Kwan">
+            </div>
+            <div class="member-info">
+              <h3>Evelyn Kwan</h3>
+              <p>Co-Founder</p>
+              <div class="member-bio">Data Science + Math @ BU.<br>Fun Fact: I have won a MIT Hackathon!</div>
+              <div class="social-icons">
+                <a href="https://github.com/evelynkwan" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/evelynkwan/" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Epaphras Oluwatimilehin Akinola -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="0">
+            <div class="member-image">
+              <img src="Epaphras_Akinola.png" alt="Epaphras Oluwatimilehin Akinola">
+            </div>
+            <div class="member-info">
+              <h3>Epaphras Akinola</h3>
+              <p>Co-Founder</p>
+              <div class="member-bio">CS @ Grambling.<br>Fun Fact: I'm also a writer!</div>
+              <div class="social-icons">
+                <a href="https://github.com/akinolaepaphras" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/epaphras-akinola/" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Rosario -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="100">
+            <div class="member-image">
+              <img src="Rosario_Medina.png" alt="Rosario">
+            </div>
+            <div class="member-info">
+              <h3>Rosario</h3>
+              <p>Co-Founder</p>
+              <div class="member-bio">Finance @ _______.<br>Fun Fact: ________</div>
+              <div class="social-icons">
+                <a href="https://github.com/RosarioM777" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://linkedin.com/in/RosarioM777" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Khoa Nguyen -->
+          <div class="team-member" data-aos="fade-up" data-aos-delay="200">
+            <div class="member-image">
+              <img src="https://source.unsplash.com/random/400x400?man-suit" alt="Khoa Nguyen">
+            </div>
+            <div class="member-info">
+              <h3>Khoa Nguyen</h3>
+              <p>Team Mentor</p>
+              <div class="member-bio">SWE @ C1.<br>Fun Fact: I tutor middle school students on the side!</div>
+              <div class="social-icons">
+                <a href="https://github.com/khoadanguyen" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                  </svg>
+                </a>
+                <a href="https://www.linkedin.com/in/khoadanguyen/" target="_blank" class="social-icon">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <section class="cta-section">
+      <div class="cta-content" data-aos="fade-up">
+        <h2>Ready to make an impact?</h2>
+        <p>Join thousands of investors who are building stronger communities through local investment.</p>
+        <div class="cta-buttons">
+          <a href="login.html" class="btn-primary lift-on-hover">Invest Now</a>
+          <a href="signup.html" class="btn-secondary lift-on-hover">List Your Business</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      AOS.init({
+        once: true,
+        offset: 50,
+        duration: 1000,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+      });
+      
+      // Custom cursor functionality
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+      let cursorEnabled = true;
+      
+      function updateCursor(e) {
+        if (!cursorEnabled) return;
+        
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(function() {
+          cursorFollower.style.left = e.clientX + 'px';
+          cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+      }
+      
+      document.addEventListener('mousemove', updateCursor);
+      
+      const interactiveElements = document.querySelectorAll('a, button, .team-member, .stat-card');
+      interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          if (!cursorEnabled) return;
+          cursor.classList.add('cursor-hover');
+          cursorFollower.classList.add('cursor-follower-hover');
+        });
+        element.addEventListener('mouseleave', () => {
+          if (!cursorEnabled) return;
+          cursor.classList.remove('cursor-hover');
+          cursorFollower.classList.remove('cursor-follower-hover');
+        });
+      });
+      
+      // Cursor toggle
+      const cursorToggle = document.getElementById('cursor-toggle');
+      cursorToggle.addEventListener('click', () => {
+        cursorEnabled = !cursorEnabled;
+        document.body.classList.toggle('cursor-disabled');
+        if (!cursorEnabled) {
+          cursor.style.display = 'none';
+          cursorFollower.style.display = 'none';
+        } else {
+          cursor.style.display = 'block';
+          cursorFollower.style.display = 'block';
+        }
+      });
+      
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.setAttribute('data-theme', 
+          document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+        );
+      });
+      
+      // Animate stats on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const statNumbers = document.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+              const targetValue = stat.innerText;
+              animateValue(stat, 0, parseFloat(targetValue.replace(/[^0-9.-]+/g, '')), 1500, targetValue.includes('$'), targetValue.includes('%'));
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      });
+      
+      const statsSection = document.querySelector('.stats-section');
+      if (statsSection) {
+        observer.observe(statsSection);
+      }
+      
+      function animateValue(obj, start, end, duration, isCurrency, isPercentage) {
+        let startTimestamp = null;
+        const step = (timestamp) => {
+          if (!startTimestamp) startTimestamp = timestamp;
+          const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+          let value = progress * (end - start) + start;
+          
+          if (isCurrency) {
+            obj.innerHTML = '$' + value.toFixed(1) + 'M';
+          } else if (isPercentage) {
+            obj.innerHTML = value.toFixed(1) + '%';
+          } else {
+            obj.innerHTML = Math.floor(value);
+          }
+          
+          if (progress < 1) {
+            window.requestAnimationFrame(step);
+          }
+        };
+        window.requestAnimationFrame(step);
+      }
+    });
+  </script>
+</body>
+</html> 

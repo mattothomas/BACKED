@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BACKED | Featured Opportunities</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <div class="cursor"></div>
+  <div class="cursor-follower"></div>
+  
+  <!-- HEADER (reuse from homepage) -->
+  <header>
+    <div class="logo">
+      <a href="index.html">
+        <img src="logo2.png" alt="BACKED Logo">
+        <span class="capital-one">by Capital One</span>
+      </a>
+    </div>
+    <nav>
+      <a href="featured-opportunities.html" class="nav-link active">Featured Opportunities</a>
+      <a href="about.html" class="nav-link">About Us</a>
+      <div class="toggle-container">
+        <button id="cursor-toggle" class="toggle-button" title="Toggle Cursor Effect">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M13 13L20 6M17.5 6H20V8.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M11 11L4 18M6.5 18H4V15.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+        <button id="theme-toggle" class="toggle-button" title="Toggle Dark Mode">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="sun-icon">
+            <circle cx="12" cy="12" r="5" stroke="currentColor" stroke-width="2"/>
+            <path d="M12 2V4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M12 20V22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4 12L2 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M22 12L20 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19.7778 4.22266L17.5558 6.25424" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M4.22217 4.22266L6.44418 6.25424" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M6.44434 17.5557L4.22211 19.7779" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            <path d="M19.7778 19.7773L17.5558 17.5551" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="moon-icon">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </button>
+      </div>
+      <a href="login.html" class="nav-link">Sign In</a>
+      <a href="login.html" class="btn-primary">Get Started</a>
+    </nav>
+  </header>
+
+  <main>
+    <div class="opportunities-container">
+      <div class="opportunities-header">
+        <h1>Featured Opportunities</h1>
+      </div>
+      <div class="opportunities-grid">
+        <!-- Card 1 -->
+        <div class="opportunity-card" data-modal="modal1" tabindex="0">
+          <div class="opportunity-image">
+            <iframe src="images/bakery1.html" frameborder="0" width="100%" height="100%"></iframe>
+            <span class="category-tag">Food & Beverage</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Sweet Delights Bakery</h3>
+            <div class="location">Portland, OR</div>
+            <div class="description">A beloved local bakery expanding to a second location. Invest in the taste of Portland!</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$300K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$250K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">87</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 83%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 2 -->
+        <div class="opportunity-card" data-modal="modal2" tabindex="0">
+          <div class="opportunity-image">
+            <iframe src="images/ecotech1.html" frameborder="0" width="100%" height="100%"></iframe>
+            <span class="category-tag">Technology</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>EcoTech Solutions</h3>
+            <div class="location">Austin, TX</div>
+            <div class="description">Smart home tech startup focused on sustainability and energy savings. Invest in the future.</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$200K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$175K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">102</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 88%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 3 -->
+        <div class="opportunity-card" data-modal="modal3" tabindex="0">
+          <div class="opportunity-image">
+            <iframe src="images/brewery1.html" frameborder="0" width="100%" height="100%"></iframe>
+            <span class="category-tag">Food & Beverage</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Urban Brewery Co.</h3>
+            <div class="location">Chicago, IL</div>
+            <div class="description">Award-winning brewery expanding distribution to neighboring states. Cheers to growth!</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$400K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$320K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">150</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 80%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+        <!-- Card 4 -->
+        <div class="opportunity-card" data-modal="modal4" tabindex="0">
+          <div class="opportunity-image">
+            <iframe src="images/bookstore1.html" frameborder="0" width="100%" height="100%"></iframe>
+            <span class="category-tag">Retail</span>
+          </div>
+          <div class="opportunity-content">
+            <h3>Next Chapter Books</h3>
+            <div class="location">New York, NY</div>
+            <div class="description">A community bookstore launching a new digital platform for local authors and readers.</div>
+            <div class="opportunity-stats">
+              <div class="stat"><span class="label">Goal</span><span class="value">$150K</span></div>
+              <div class="stat"><span class="label">Raised</span><span class="value">$90K</span></div>
+              <div class="stat"><span class="label">Investors</span><span class="value">60</span></div>
+            </div>
+            <div class="progress-bar"><div class="progress" style="width: 60%;"></div></div>
+            <button class="invest-button">View Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODALS -->
+    <!-- Modal 1: Sweet Delights Bakery -->
+    <div class="modal" id="modal1">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <iframe src="images/bakery1.html" frameborder="0" class="slide-img active" style="width:100%;height:100%"></iframe>
+              <iframe src="images/bakery2.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+              <iframe src="images/bakery3.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Sweet Delights Bakery</h2>
+            <div class="modal-location">Portland, OR</div>
+            <div class="modal-description">A beloved local bakery expanding to a second location. Invest in the taste of Portland!</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $300,000</div>
+              <div><strong>Raised:</strong> $250,000</div>
+              <div><strong>Investors:</strong> 87</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:83%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart1">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart1">Month</button>
+            </div>
+            <canvas id="chart1" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 2: EcoTech Solutions -->
+    <div class="modal" id="modal2">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <iframe src="images/ecotech1.html" frameborder="0" class="slide-img active" style="width:100%;height:100%"></iframe>
+              <iframe src="images/ecotech2.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+              <iframe src="images/ecotech3.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>EcoTech Solutions</h2>
+            <div class="modal-location">Austin, TX</div>
+            <div class="modal-description">Smart home tech startup focused on sustainability and energy savings. Invest in the future.</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $200,000</div>
+              <div><strong>Raised:</strong> $175,000</div>
+              <div><strong>Investors:</strong> 102</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:88%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart2">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart2">Month</button>
+            </div>
+            <canvas id="chart2" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 3: Urban Brewery Co. -->
+    <div class="modal" id="modal3">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <iframe src="images/brewery1.html" frameborder="0" class="slide-img active" style="width:100%;height:100%"></iframe>
+              <iframe src="images/brewery2.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+              <iframe src="images/brewery3.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Urban Brewery Co.</h2>
+            <div class="modal-location">Chicago, IL</div>
+            <div class="modal-description">Award-winning brewery expanding distribution to neighboring states. Cheers to growth!</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $400,000</div>
+              <div><strong>Raised:</strong> $320,000</div>
+              <div><strong>Investors:</strong> 150</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:80%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart3">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart3">Month</button>
+            </div>
+            <canvas id="chart3" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal 4: Next Chapter Books -->
+    <div class="modal" id="modal4">
+      <div class="modal-content wide">
+        <button class="close-modal" aria-label="Close">&times;</button>
+        <div class="modal-flex">
+          <div class="modal-slider">
+            <button class="slide-arrow left" aria-label="Previous photo">&#8592;</button>
+            <div class="slide-img-wrap">
+              <iframe src="images/bookstore1.html" frameborder="0" class="slide-img active" style="width:100%;height:100%"></iframe>
+              <iframe src="images/bookstore2.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+              <iframe src="images/bookstore3.html" frameborder="0" class="slide-img" style="width:100%;height:100%"></iframe>
+            </div>
+            <button class="slide-arrow right" aria-label="Next photo">&#8594;</button>
+            <div class="slide-count"><span class="current">1</span> / <span class="total">3</span></div>
+          </div>
+          <div class="modal-details">
+            <h2>Next Chapter Books</h2>
+            <div class="modal-location">New York, NY</div>
+            <div class="modal-description">A community bookstore launching a new digital platform for local authors and readers.</div>
+            <div class="modal-stats">
+              <div><strong>Goal:</strong> $150,000</div>
+              <div><strong>Raised:</strong> $90,000</div>
+              <div><strong>Investors:</strong> 60</div>
+            </div>
+            <div class="modal-progress-bar"><div class="progress" style="width:60%"></div></div>
+            <div class="modal-graph-controls">
+              <button class="graph-toggle active" data-period="year" data-chart="chart4">Year</button>
+              <button class="graph-toggle" data-period="month" data-chart="chart4">Month</button>
+            </div>
+            <canvas id="chart4" height="120"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Initialize AOS
+      AOS.init({
+        once: true,
+        offset: 50,
+        duration: 1000,
+        easing: 'cubic-bezier(0.16, 1, 0.3, 1)'
+      });
+
+      // Custom cursor functionality
+      const cursor = document.querySelector('.cursor');
+      const cursorFollower = document.querySelector('.cursor-follower');
+      let cursorEnabled = true;
+      
+      function updateCursor(e) {
+        if (!cursorEnabled) return;
+        
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top = e.clientY + 'px';
+        
+        setTimeout(function() {
+          cursorFollower.style.left = e.clientX + 'px';
+          cursorFollower.style.top = e.clientY + 'px';
+        }, 100);
+      }
+      
+      document.addEventListener('mousemove', updateCursor);
+      
+      const interactiveElements = document.querySelectorAll('a, button, .opportunity-card, .modal-content, .slide-arrow, .graph-toggle');
+      interactiveElements.forEach(element => {
+        element.addEventListener('mouseenter', () => {
+          if (!cursorEnabled) return;
+          cursor.classList.add('cursor-hover');
+          cursorFollower.classList.add('cursor-follower-hover');
+        });
+        element.addEventListener('mouseleave', () => {
+          if (!cursorEnabled) return;
+          cursor.classList.remove('cursor-hover');
+          cursorFollower.classList.remove('cursor-follower-hover');
+        });
+      });
+
+      // Cursor toggle
+      const cursorToggle = document.getElementById('cursor-toggle');
+      cursorToggle.addEventListener('click', () => {
+        cursorEnabled = !cursorEnabled;
+        document.body.classList.toggle('cursor-disabled');
+        if (!cursorEnabled) {
+          cursor.style.display = 'none';
+          cursorFollower.style.display = 'none';
+        } else {
+          cursor.style.display = 'block';
+          cursorFollower.style.display = 'block';
+        }
+      });
+
+      // Theme toggle
+      const themeToggle = document.getElementById('theme-toggle');
+      themeToggle.addEventListener('click', () => {
+        document.documentElement.setAttribute('data-theme', 
+          document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark'
+        );
+      });
+
+      // Add animation to opportunity cards
+      document.querySelectorAll('.opportunity-card').forEach((card, index) => {
+        card.setAttribute('data-aos', 'fade-up');
+        card.setAttribute('data-aos-delay', (index * 100).toString());
+      });
+
+      // Animate progress bars on scroll
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const progressBar = entry.target.querySelector('.progress');
+            const width = progressBar.style.width;
+            progressBar.style.width = '0';
+            setTimeout(() => {
+              progressBar.style.width = width;
+            }, 100);
+          }
+        });
+      }, { threshold: 0.5 });
+
+      document.querySelectorAll('.opportunity-card').forEach(card => {
+        observer.observe(card);
+      });
+
+      // EXISTING MODAL LOGIC
+      document.querySelectorAll('.opportunity-card, .invest-button').forEach(card => {
+        card.addEventListener('click', function(e) {
+          e.preventDefault();
+          const modalId = this.dataset.modal || this.closest('.opportunity-card').dataset.modal;
+          const modal = document.getElementById(modalId);
+          modal.classList.add('open');
+          document.body.style.overflow = 'hidden';
+          
+          // Render chart immediately when modal opens
+          const chartId = `chart${modalId.replace('modal', '')}`;
+          renderChart(chartId, 'year');
+        });
+      });
+
+      document.querySelectorAll('.close-modal').forEach(btn => {
+        btn.addEventListener('click', function() {
+          this.closest('.modal').classList.remove('open');
+          document.body.style.overflow = '';
+        });
+      });
+
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            modal.classList.remove('open');
+            document.body.style.overflow = '';
+          }
+        });
+      });
+
+      // Enhanced slider logic with smooth transitions
+      document.querySelectorAll('.modal-slider').forEach(slider => {
+        const images = slider.querySelectorAll('.slide-img');
+        const left = slider.querySelector('.slide-arrow.left');
+        const right = slider.querySelector('.slide-arrow.right');
+        const current = slider.querySelector('.slide-count .current');
+        const total = slider.querySelector('.slide-count .total');
+        let idx = 0;
+        total.textContent = images.length;
+
+        function show(i) {
+          images.forEach((img, j) => {
+            img.style.opacity = '0';
+            img.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+              if (i === j) {
+                img.style.opacity = '1';
+                img.style.transform = 'scale(1)';
+              }
+            }, 300);
+            img.classList.toggle('active', i === j);
+          });
+          current.textContent = i + 1;
+        }
+
+        left.addEventListener('click', e => {
+          e.stopPropagation();
+          idx = (idx - 1 + images.length) % images.length;
+          show(idx);
+        });
+
+        right.addEventListener('click', e => {
+          e.stopPropagation();
+          idx = (idx + 1) % images.length;
+          show(idx);
+        });
+
+        show(idx);
+      });
+
+      // CHART LOGIC WITH STATIC DATA
+      const staticChartData = {
+        'chart1': {
+          year: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+            data: [80, 95, 85, 100, 90, 110, 140, 160, 200, 220, 235, 250]
+          },
+          month: {
+            labels: ['1', '5', '10', '15', '20', '25', '30'],
+            data: [235, 242, 238, 245, 240, 248, 250]
+          }
+        },
+        'chart2': {
+          year: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+            data: [50, 65, 55, 70, 85, 95, 120, 140, 165, 155, 165, 175]
+          },
+          month: {
+            labels: ['1', '5', '10', '15', '20', '25', '30'],
+            data: [165, 172, 168, 171, 167, 173, 175]
+          }
+        },
+        'chart3': {
+          year: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+            data: [100, 130, 120, 140, 135, 160, 180, 220, 280, 260, 290, 320]
+          },
+          month: {
+            labels: ['1', '5', '10', '15', '20', '25', '30'],
+            data: [290, 305, 295, 310, 300, 315, 320]
+          }
+        },
+        'chart4': {
+          year: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec', 'Jan', 'Feb', 'Mar', 'Apr'],
+            data: [10, 25, 20, 35, 30, 45, 40, 55, 75, 70, 85, 90]
+          },
+          month: {
+            labels: ['1', '5', '10', '15', '20', '25', '30'],
+            data: [85, 89, 86, 88, 85, 87, 90]
+          }
+        }
+      };
+
+      let charts = {};
+      
+      function renderChart(chartId, period) {
+        const data = staticChartData[chartId][period];
+        const ctx = document.getElementById(chartId).getContext('2d');
+        
+        if (charts[chartId]) {
+          charts[chartId].data.labels = data.labels;
+          charts[chartId].data.datasets[0].data = data.data;
+          charts[chartId].update('none'); // Use 'none' to disable animations on update
+        } else {
+          charts[chartId] = new Chart(ctx, {
+            type: 'line',
+            data: {
+              labels: data.labels,
+              datasets: [{
+                label: 'Funds Raised ($K)',
+                data: data.data,
+                borderColor: '#d32f2f',
+                backgroundColor: 'rgba(211,47,47,0.08)',
+                fill: true,
+                tension: 0.3,
+                pointRadius: 0,
+                borderWidth: 3
+              }]
+            },
+            options: {
+              animation: {
+                duration: 0 // Disable animations
+              },
+              plugins: { 
+                legend: { display: false }
+              },
+              scales: {
+                x: { 
+                  display: true,
+                  grid: { display: false }
+                },
+                y: {
+                  display: true,
+                  grid: { color: '#e0e0e0' },
+                  beginAtZero: true
+                }
+              },
+              responsive: true,
+              maintainAspectRatio: false
+            }
+          });
+        }
+      }
+
+      // Toggle between year/month
+      document.querySelectorAll('.modal').forEach(modal => {
+        modal.querySelectorAll('.graph-toggle').forEach(btn => {
+          btn.addEventListener('click', function() {
+            modal.querySelectorAll('.graph-toggle').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            renderChart(this.dataset.chart, this.dataset.period);
+          });
+        });
+      });
+    });
+  </script>
+</body>
+</html>
