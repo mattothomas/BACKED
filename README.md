@@ -1,5 +1,7 @@
 # 🚀 BACKED By Capital One — Invest In Your Community
 
+We’re proud to announce that **BACKED** won **1st place** at the **Capital One Tech Summit Hackathon (May 2025)**! 🎉
+
 **BACKED** is a sleek, modern web app that connects **local investors** with **small businesses** in their own communities.
 
 _"Change banking for good"_  
@@ -9,7 +11,7 @@ Built with ❤️ as part of the Capital One Tech Summit Hackathon, May 2025
 
 **Empower your neighborhood. Fund the future. Get BACKED.**
 
-![BACKED Logo](logo.png)
+<img src="logo.png" alt="BACKED Logo" width="200"/>
 
 ---
 
@@ -96,11 +98,43 @@ Here’s where we’re headed:
 ## 🧠 Made By
 
 Crafted with collaboration, caffeine, and code by our amazing hackathon team at the **Capital One COTS Hackathon 2025**, where we proudly won first place! 🥇
-@mattothomas  
-@RosarioM777  
-@hiennguyen711  
-@akinolaepaphras  
-@evelynkwan
+
+**Matthew Thomas**  
+Co-Founder  
+[LinkedIn](https://www.linkedin.com/in/matthewothomas) | [GitHub](https://github.com/mattothomas)  
+Computer Engineering @ PSU  
+Fun Fact: I am a Black Belt in Karate!
+
+**Hien Nguyen**  
+Co-Founder  
+[LinkedIn](https://www.linkedin.com/in/hnguyen711/) | [GitHub](https://github.com/hiennguyen711)  
+Computer Science @ NYU  
+Fun Fact: I am trilingual!
+
+**Evelyn Kwan**  
+Co-Founder  
+[LinkedIn](https://www.linkedin.com/in/evelynkwan/) | [GitHub](https://github.com/evelynkwan)  
+Data Science + Math @ BU  
+Fun Fact: I have won an MIT Hackathon!
+
+**Epaphras Oluwatimilehin Akinola**  
+Co-Founder  
+[LinkedIn](https://www.linkedin.com/in/epaphras-akinola/) | [Github](https://github.com/akinolaepaphras)  
+CS @ Grambling  
+Fun Fact: I'm also a writer!
+
+**Rosario M.**  
+Co-Founder  
+[LinkedIn](https://www.linkedin.com/in/rosariom123) | [GitHub](https://github.com/RosarioM777)  
+Finance @ Fordham  
+Fun Fact: This was my first Hackathon!
+
+**Khoa Nguyen**  
+Team Mentor  
+[LinkedIn](https://www.linkedin.com/in/khoadanguyen/)  
+SWE @ Capital One  
+Fun Fact: I tutor middle school students on the side!
+
 
 ---
 
