@@ -1,6 +1,7 @@
 # 🚀 BACKED By Capital One — Invest In Your Community
 
-We’re proud to announce that **BACKED** won **1st place** at the **Capital One Tech Summit Hackathon (May 2025)**! 🎉
+Proud **1st place** winners at the **Capital One Tech Summit Hackathon (May 2025)**! 🎉
+
 
 **BACKED** is a sleek, modern web app that connects **local investors** with **small businesses** in their own communities.
 
