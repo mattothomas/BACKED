@@ -80,7 +80,6 @@ During our intense 36-hour hackathon in May 2025, we quickly iterated on **BACKE
 - **[Version 0.1 - Design Foundations](https://c5er4491.live.codepad.app)**: We started to bring the design together here, adding smooth animations and visual elements that really made the app *pop* — bringing it closer to the look we wanted.
 - **[Taking a Break - User Flow Experiment](https://5ly00wm0.live.codepad.app)**: This version focused on refining the user experience, specifically the signup/login flow. We got some inspiration from [this YouTube tutorial](https://www.youtube.com/watch?v=Z_AbWH-Vyl8), which helped make the process feel seamless.
 - **[Version 1.0 - First Live Demo](https://kekn1us5.live.codepad.app/)**: Our first major milestone — this is where the app went live and was fully functional, featuring core features like browsing investments and user sign-ups.
-- **[Version 1.1 - Coming Soon](#)**: We’re continuing to enhance **BACKED** with new features and improvements. Stay tuned for the next update!
 
 ---
 
