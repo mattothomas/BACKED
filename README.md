@@ -127,7 +127,7 @@ Fun Fact: I'm also a writer!
 
 **Rosario M.**  
 Co-Founder  
-[LinkedIn](https://www.linkedin.com/in/rosariom123) | [GitHub](https://github.com/RosarioM777)  
+[LinkedIn](https://www.linkedin.com/in/rosariom123) | [GitHub](https://github.com/RosarioM123)  
 Finance @ Fordham  
 Fun Fact: This was my first Hackathon!
 
